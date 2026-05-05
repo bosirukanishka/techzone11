@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechZone | Exclusive Tech Offers SL</title>
+    <style>
+        :root {
+            --primary: #0ea5e9;
+            --secondary: #f97316; 
+            --dark: #0f172a;
+            --sale: #ef4444;
+            --bg-overlay: rgba(248, 250, 252, 0.92); 
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-image: linear-gradient(var(--bg-overlay), var(--bg-overlay)), 
+                              url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            color: #1e293b;
+            scroll-behavior: smooth;
+        }
+
+        .flash-sale {
+            background: linear-gradient(90deg, #ef4444, #f97316);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        header {
+            background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), 
+                        url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 4px solid var(--primary);
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            letter-spacing: 5px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        }
+
+        nav {
+            background: rgba(15, 23, 42, 0.95);
+            padding: 18px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        nav a {
+            color: #e2e8f0;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            padding: 8px 12px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        nav a:hover { 
+            color: white;
+            background-color: var(--primary);
+            box-shadow: 0 0 15px var(--primary);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .category-title {
+            font-size: 1.8rem;
+            background: white;
+            display: inline-block;
+            padding: 10px 25px 10px 15px;
+            border-left: 5px solid var(--primary);
+            border-radius: 0 10px 10px 0;
+            margin: 50px 0 25px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+            transition: 0.3s;
+            position: relative;
+            border: 1px solid #e2e8f0;
+        }
+
+        .product-card:hover { 
+            transform: translateY(-10px);
+        }
+
+        .badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--sale);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            z-index: 10;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .details { padding: 20px; text-align: center; }
+        .new-price { color: #059669; font-size: 1.4rem; font-weight: 800; display: block; margin-top: 5px;}
+        .old-price { text-decoration: line-through; color: #94a3b8; font-size: 1rem; }
+        .save-price { color: var(--sale); font-size: 0.8rem; font-weight: bold; display: block; margin-top: 5px;}
+
+        footer {
+            background: var(--dark);
+            color: #94a3b8;
+            text-align: center;
+            padding: 40px;
+            margin-top: 60px;
+        }
+
+        .payment-methods {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #1e293b;
+        }
+
+        .payment-icons {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            filter: grayscale(1) opacity(0.7);
+        }
+        
+        .payment-text {
+            font-size: 0.85rem;
+            color: #cbd5e1;
+        }
+    </style>
+</head>
+<body>
+
+<div class="flash-sale">⚡ CHRISTMAS SPECIAL: UP TO 40% OFF | FREE DELIVERY ISLANDWIDE ⚡</div>
+
+<header>
+    <h1>TECHZONE</h1>
+    <p>Sri Lanka's TOP. 1 Electronics Destination</p>
+</header>
+
+<nav>
+    <a href="#smartphones">Smartphones</a>
+    <a href="#laptops">Laptops</a>
+    <a href="#audio">Audio</a>
+    <a href="#smartwatches">Smart Watches</a>
+    <a href="#gaming">Gaming</a>
+    <a href="#new-arrivals">New Arrivals</a>
+    <a href="#special-offers">Special Offers</a>
+</nav>
+
+<div class="container">
+
+    <!-- Smartphones -->
+    <section id="smartphones">
+        <h2 class="category-title">Smartphones</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="badge">OFFER</div>
+                <img src="https://images.unsplash.com/photo-1738830251513-a7bfef4b53c6?q=80&w=500">
+                <div class="details"><h3>Samsung S24 Ultra</h3><div class="new-price">Rs. 345,000</div></div>
+            </div>
+            <div class="product-card">
+                <div class="badge">HOT</div>
+                <img src="https://images.unsplash.com/photo-1758467700578-7491a5c7eedd?q=80&w=500">
+                <div class="details"><h3>iPhone 17 Pro</h3><div class="new-price">Rs. 491,000</div></div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1724438192699-89f587b04c24?q=80&w=500">
+                <div class="details"><h3>Google Pixel 9 Pro</h3><div class="new-price">Rs. 229,000</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Laptops -->
+    <section id="laptops">
+        <h2 class="category-title">Laptops</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="badge">NEW</div>
+                <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=500">
+                <div class="details"><h3>MacBook Air M3</h3><div class="new-price">Rs. 365,000</div></div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=500">
+                <div class="details"><h3>Dell XPS 13</h3><div class="new-price">Rs. 420,000</div></div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=500">
+                <div class="details"><h3>HP Spectre x360</h3><div class="new-price">Rs. 395,000</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Audio -->
+    <section id="audio">
+        <h2 class="category-title">Audio</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1612858250434-b5358e2b3625?q=80&w=1170&auto=format&fit=crop">
+                <div class="details"><h3>Sony WH-1000XM5</h3><div class="new-price">Rs. 95,000</div></div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1611864583067-b002fdc4fa29?q=80&w=1176&auto=format&fit=crop">
+                <div class="details"><h3>AirPods Pro 2</h3><div class="new-price">Rs. 72,500</div></div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1666460811258-c7ceac639561?q=80&w=1025&auto=format&fit=crop">
+                <div class="details"><h3>JBL Go 3</h3><div class="new-price">Rs. 14,500</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Smart Watches -->
+    <section id="smartwatches">
+        <h2 class="category-title">Smart Watches</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="badge">BEST SELLER</div>
+                <img src="https://images.unsplash.com/photo-1656053209629-8bdf3e494f91?q=80&w=1170&auto=format&fit=crop">
+                <div class="details"><h3>Apple Watch Ultra 2</h3><div class="new-price">Rs. 245,000</div></div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1617043983671-adaadcaa2460?q=80&w=1170&auto=format&fit=crop">
+                <div class="details"><h3>Samsung Galaxy Watch 6</h3><div class="new-price">Rs. 68,000</div></div>
+            </div>
+            <div class="product-card">
+                <div class="badge">OFFER</div>
+                <img src="https://images.unsplash.com/photo-1579586337278-3befd40fd17a?q=80&w=500">
+                <div class="details"><h3>Huawei Watch GT 4</h3><div class="new-price">Rs. 58,000</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gaming -->
+    <section id="gaming">
+        <h2 class="category-title">Gaming</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1614882105050-b81b3298ec47?q=80&w=500">
+                <div class="details"><h3>PS5 DualSense</h3><div class="new-price">Rs. 24,500</div></div>
+            </div>
+            <div class="product-card">
+                <img src="https://media.istockphoto.com/id/1219428739/photo/razer-huntsman-elite.jpg?s=1024x1024&w=is&k=20&c=VO-K6nPEW7Bs8R3rlqyj9kGKnytcwOb1rHZFWfFEew8=">
+                <div class="details"><h3>Razer Keyboard</h3><div class="new-price">Rs. 26,000</div></div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1616071358846-9f34f471815d?q=80&w=500">
+                <div class="details"><h3>Logitech G Pro X</h3><div class="new-price">Rs. 42,000</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Arrivals -->
+    <section id="new-arrivals">
+        <h2 class="category-title">New Arrivals</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="badge" style="background:var(--primary)">NEW</div>
+                <img src="https://images.unsplash.com/photo-1662731340335-e5485bd50268?q=80&w=1169&auto=format&fit=crop">
+                <div class="details"><h3>iPad Pro M4</h3><div class="new-price">Rs. 310,000</div></div>
+            </div>
+            <div class="product-card">
+                <div class="badge" style="background:var(--primary)">NEW</div>
+                <img src="https://images.unsplash.com/photo-1707862299473-f8b2fdf2c35d?q=80&w=764&auto=format&fit=crop">
+                <div class="details"><h3>Sony ZV-E10 II</h3><div class="new-price">Rs. 310,000</div></div>
+            </div>
+            <div class="product-card">
+                <div class="badge" style="background:var(--primary)">NEW</div>
+                <img src="https://images.unsplash.com/photo-1736801374687-22746ca16ede?q=80&w=687&auto=format&fit=crop">
+                <div class="details"><h3>DJI Neo Drone</h3><div class="new-price">Rs. 85,000</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Offers Section -->
+    <section id="special-offers">
+        <h2 class="category-title">Special Offers</h2>
+        <div class="product-grid">
+            <!-- Updated Items with Offers -->
+            <div class="product-card">
+                <div class="badge">40% OFF</div>
+                <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?q=80&w=500">
+                <div class="details">
+                    <h3>Beats Studio Pro</h3>
+                    <span class="old-price">Rs. 135,000</span>
+                    <span class="new-price">Rs. 81,000</span>
+                    <span class="save-price">SAVE RS. 54,000</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="badge">SAVE 20K</div>
+                <img src="https://images.unsplash.com/photo-1522273400909-fd1a8f77637e?q=80&w=500">
+                <div class="details">
+                    <h3>Kindle Paperwhite</h3>
+                    <span class="old-price">Rs. 75,000</span>
+                    <span class="new-price">Rs. 55,000</span>
+                    <span class="save-price">CHRISTMAS DEAL</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="badge">OFFER</div>
+                <img src="https://images.unsplash.com/photo-1725085815038-279c8139c8a4?q=80&w=688&auto=format&fit=crop">
+                <div class="details">
+                    <h3>Samsung T7 SSD</h3>
+                    <span class="old-price">Rs. 45,000</span>
+                    <span class="new-price">Rs. 38,000</span>
+                    <span class="save-price">LIMITED STOCK</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<footer>
+    <p><strong>TechZone Sri Lanka</strong></p>
+    <p>beach Road , matara | Bus station </p>
+    <p>Hotline: 011 125 1255 | Cash on Delivery Available Islandwide</p>
+    
+    <!-- Added Card Payment Details -->
+    <div class="payment-methods">
+        <div class="payment-icons">
+            <span>💳</span> <!-- Visa/Mastercard representation -->
+            <span style="font-size: 0.8rem; vertical-align: middle;">VISA / MASTERCARD / AMEX</span>
+        </div>
+        <p class="payment-text">We Accept All Major Credit & Debit Cards</p>
+        <p class="payment-text" style="color: #0ea5e9;">Easy Payment Plans (Instalments) Available for Selected Cards</p>
+    </div>
+</footer>
+
+</body>
+</html>
